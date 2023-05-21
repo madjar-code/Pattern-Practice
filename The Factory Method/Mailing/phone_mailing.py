@@ -34,7 +34,7 @@ class PhoneMessage(Message):
         """Send message to phone"""
         try:
             # code to message sending
-            print('Phone message sent')
+            print(f'Phone message sent to {self.recipient.name}')
         except:
             print('Problems sending a phone message')
 
@@ -50,7 +50,7 @@ class EmailMessage(Message):
         """Send message to email"""
         try:
             # code to message sending
-            print('Email message sent')
+            print(f'Email message sent to {self.recipient.name}')
         except:
             print('Problems sending an email message')
 
