@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 from typing import (
     NamedTuple,
     Optional,
+    Sequence,
 )
 
 
@@ -11,7 +12,7 @@ class User(NamedTuple):
     phone: Optional[str]
 
 
-users = [
+users: Sequence[User] = [
     User(name="evan", phone="+111111111"),
     User(name="alex", phone="+222222222"),
     User(name="george", phone="+333333333")
@@ -37,3 +38,13 @@ class PhoneMessage(Message):
         except:
             print('Problems sending a phone message')
 
+
+def sending_messages() -> None:
+    for user in users:
+        phone_message = PhoneMessage(
+            text='Wonderful weather', recipient=user)
+        phone_message.send_message()
+
+
+if __name__ == '__main__':
+    sending_messages()
