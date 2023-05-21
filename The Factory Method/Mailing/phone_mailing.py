@@ -39,6 +39,22 @@ class PhoneMessage(Message):
             print('Problems sending a phone message')
 
 
+class EmailMessage(Message):
+    def __init__(self, subject: str, text: str,
+                 recipient: User) -> None:
+        self.subject: str = subject
+        self.message_text: str = text
+        self.recipient: User = recipient
+
+    def send_message(self) -> None:
+        """Send message to email"""
+        try:
+            # code to message sending
+            print('Email message sent')
+        except:
+            print('Problems sending an email message')
+
+
 def sending_messages() -> None:
     for user in users:
         phone_message = PhoneMessage(
